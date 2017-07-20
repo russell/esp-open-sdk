@@ -1,4 +1,3 @@
-
 # Whether to merge SDK into Xtensa toolchain, producing standalone
 # ESP8266 toolchain. Use 'n' if you want generic Xtensa toolchain
 # which can be used with multiple SDK versions.
@@ -335,7 +334,7 @@ sdk_patch: $(VENDOR_SDK_DIR)/.dir .sdk_patch_$(VENDOR_SDK)
 	$(UNZIP) $<
 	@touch $@
 
-.sdk_patch_0.9.2: FRM_ERR_PATCH.rar esp_iot_sdk_v0.9.2/.dir 
+.sdk_patch_0.9.2: FRM_ERR_PATCH.rar esp_iot_sdk_v0.9.2/.dir
 	unrar x -o+ $<
 	cp FRM_ERR_PATCH/*.a $(VENDOR_SDK_DIR)/lib/
 	@touch $@
@@ -349,12 +348,12 @@ user_rf_cal_sector_set.o: user_rf_cal_sector_set.c $(TOOLCHAIN)/bin/xtensa-lx106
 lwip: toolchain sdk_patch
 ifeq ($(STANDALONE),y)
 	$(MAKE) -C esp-open-lwip -f Makefile.open install \
-	    CC=$(TOOLCHAIN)/bin/xtensa-lx106-elf-gcc \
-	    AR=$(TOOLCHAIN)/bin/xtensa-lx106-elf-ar \
-	    PREFIX=$(TOOLCHAIN)
+			CC=$(TOOLCHAIN)/bin/xtensa-lx106-elf-gcc \
+			AR=$(TOOLCHAIN)/bin/xtensa-lx106-elf-ar \
+			PREFIX=$(TOOLCHAIN)
 	cp -a esp-open-lwip/include/arch esp-open-lwip/include/lwip esp-open-lwip/include/netif \
-	    esp-open-lwip/include/lwipopts.h \
-	    $(TOOLCHAIN)/xtensa-lx106-elf/sysroot/usr/include/
+			esp-open-lwip/include/lwipopts.h \
+			$(TOOLCHAIN)/xtensa-lx106-elf/sysroot/usr/include/
 endif
 
 
@@ -363,7 +362,7 @@ ESP8266_NONOS_SDK-2.1.0.zip:
 # The only change wrt to ESP8266_NONOS_SDK_V2.0.0_16_07_19.zip is licensing blurb in source/
 # header files. Libs are the same (and patch is required just the same).
 ESP8266_NONOS_SDK_V2.0.0_16_08_10.zip:
-	wget --content-disposition "http://bbs.espressif.com/download/file.php?id=1690"
+	wget --content-disposition "http://espressif.com/sites/default/files/sdks/esp8266_nonos_sdk_v2.0.0_16_08_10.zip" -O ESP8266_NONOS_SDK_V2.0.0_16_08_10.zip
 ESP8266_NONOS_SDK_V2.0.0_16_07_19.zip:
 	wget --content-disposition "http://bbs.espressif.com/download/file.php?id=1613"
 ESP8266_NONOS_SDK_V1.5.4_16_05_20.zip:
