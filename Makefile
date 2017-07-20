@@ -362,7 +362,7 @@ ESP8266_NONOS_SDK-2.1.0.zip:
 # The only change wrt to ESP8266_NONOS_SDK_V2.0.0_16_07_19.zip is licensing blurb in source/
 # header files. Libs are the same (and patch is required just the same).
 ESP8266_NONOS_SDK_V2.0.0_16_08_10.zip:
-	wget --content-disposition "http://espressif.com/sites/default/files/sdks/esp8266_nonos_sdk_v2.0.0_16_08_10.zip" -O ESP8266_NONOS_SDK_V2.0.0_16_08_10.zip
+	wget --content-disposition "http://espressif.com/sites/default/files/sdks/esp8266_nonos_sdk_v2.0.0_16_08_10.zip" -O $@
 ESP8266_NONOS_SDK_V2.0.0_16_07_19.zip:
 	wget --content-disposition "http://bbs.espressif.com/download/file.php?id=1613"
 ESP8266_NONOS_SDK_V1.5.4_16_05_20.zip:
@@ -435,4 +435,4 @@ lib_mem_optimize_150714.zip:
 Patch01_for_ESP8266_NONOS_SDK_V1.5.2.zip:
 	wget --content-disposition "http://bbs.espressif.com/download/file.php?id=1168"
 ESP8266_NONOS_SDK_V2.0.0_patch_16_08_09.zip:
-	wget --content-disposition "http://bbs.espressif.com/download/file.php?id=1654"
+	wget --content-disposition "http://espressif.com/sites/default/files/sdks/esp8266_nonos_sdk_v2.0.0_patch_16_08_09.zip" -O $@
